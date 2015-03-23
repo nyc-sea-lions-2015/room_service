@@ -1,11 +1,14 @@
 <div class="container" id="index-container">
   <div class="row">
     <div class="col-md-7">
+      <!-- -->
       <% @rooms.each do |room| %>
       <div class="room">
         <h2><%= room.name %></h2>
         <ul>
           <% room.appointments.each do |appt| %>
+            <!-- DO NOT do AR Queries in your views -->
+            <!-- {name: , start_tm: , end_tm} -->
           <li><%= Group.find_by(id: appt.group_id).name %>: <%= appt.start_datetime.strftime("%b %d %l:%M %p") %> to <%= appt.end_datetime.strftime("%l:%M %p") %></li>
           <% end %>
         </ul>

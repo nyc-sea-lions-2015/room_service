@@ -1,9 +1,12 @@
 <h2>Appointment</h2>
+
+<!-- ZM: We should not be using params in the views either  -->
 <form action="/users/<%= params[:id] %>/appointments/<%= params[:appt_id] %>/edit" method="post">
   <input type="hidden" name="_method" value="put">
 
   <!-- Room dropdown -->
   <label for="room">Room</label><br>
+  <!-- look into view helpers  --> 
   <select id="room" name="room">
     <% cur_room = Room.find(@appt.room_id).name %>
     <option value="<%= cur_room %>"><%= cur_room %></option>
@@ -13,6 +16,7 @@
   </select>
 
   <!-- Link to Rooms Schedule -->
+  <!-- ZM: Do not put IDs in just for the sake of IDS -->
   <a href="/users/:id/rooms"  target="_blank">See Schedule</a><br>
 
   <!-- Date  -->

@@ -1,9 +1,16 @@
+#ZM: This could be dried up allooottttttttt
+
 Room.create([{name: "Atlantis"},
              {name: "Thread"},
              {name: "String"},
              {name: "Kernel"},
              {name: "Object"}])
 
+#ZM: try not to seed in groups like this
+#zack = User.create({})
+#
+#Appoitment.create(user: zack)
+#
 User.create([{first_name: 'Hoa',
               last_name: 'Nguyen',
               email_address: 'hoathenguyen85@gmail.com',
